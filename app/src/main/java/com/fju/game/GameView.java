@@ -27,13 +27,13 @@ public class GameView extends View {
         Log.d("Game", "onDraw:" + px+ "," +py);
         Paint paint = new Paint();
         canvas.drawLine(400, 0, 0, 600, paint);
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.monkey);
+        Bitmap bitmap = BitmapFactory.decodeResource(getResources(), R.drawable.iconfinder_monkeys_audio_49052);
         iconWidth = bitmap.getWidth();
         iconHeight = bitmap.getHeight();
         canvas.drawBitmap(bitmap, px, py, paint);
     }
     public void setPx(float px){
-        if(px>iconWidth-400&&px<getWidth()-300)
+        if(px>=-50&&px<=1050)
         {
             this.px=px;
         }
@@ -41,15 +41,25 @@ public class GameView extends View {
     public float getPx(){
         return px;
     }
-
     public void setPy(float py) {
-        if(py>iconHeight&&py<getHeight()-300);
+        if(py>0&&py<getHeight()-100);
         {
             this.py = py;
         }
     }
-
     public float getPy() {
         return py;
+    }
+    public void moveRight(){
+        if(px<=1050){
+            px=px+50;
+            invalidate();
+        }
+    }
+    public void moveLeft(){
+        if(px>50){
+            px=px+-50;
+            invalidate();
+        }
     }
 }

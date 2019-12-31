@@ -50,4 +50,14 @@
         app:layout_constraintEnd_toStartOf="@+id/arrow_down"
         app:srcCompat="@drawable/arrow_left" />
 
+    <view
+        android:id="@+id/view3"
+        class="com.fju.game.GameView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/arrow_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
